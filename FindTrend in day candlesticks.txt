@@ -1,5 +1,6 @@
 #For this program to run first run Getting Request Token URL program and get the request token and run Get Access Token Program
 #This program will print the strong uptrend, uptrend, strong downtrend, downtrend, uptrend settled and range market stocks and downtrendsettled stocks
+#It also prints out if the current candlestick is closed above or below the downtrend 7MA or Uptrend 7MA
 #This is written based on moving averages differences
 #First it will calculate the average candlestick height (based on last 80 days candlesticks lows and highs and not open and close)
 #Then it will take the last 11 MA and it will calculate the MA difference between each of them
@@ -111,8 +112,8 @@ def getMADiffs(ma_check):
 dict_codes = {'ACC':'5633','ADANIENT':'6401','ADANIPORTS':'3861249','ADANIPOWER':'4451329','AJANTPHARM':'2079745','ALBK':'2760193','AMARAJABAT':'25601','AMBUJACEM':'325121','ANDHRABANK':'2524673','APOLLOHOSP':'40193','APOLLOTYRE':'41729','ARVIND':'49409','ASHOKLEY':'54273','ASIANPAINT':'60417','AUROPHARMA':'70401','AXISBANK':'1510401','BAJAJ-AUTO':'4267265','BAJAJFINSV':'4268801','BAJFINANCE':'81153','BALKRISIND':'85761','BALRAMCHIN':'87297','BANKBARODA':'1195009','BANKINDIA':'1214721','BATAINDIA':'94977','BEL':'98049','BEML':'101121','BERGEPAINT':'103425','BHARATFIN':'4995329','BHARATFORG':'108033','BHARTIARTL':'2714625','BHEL':'112129','BIOCON':'2911489','BOSCHLTD':'558337','BPCL':'134657','BRITANNIA':'140033','CADILAHC':'2029825','CANBK':'2763265','CANFINHOME':'149249','CAPF':'3903745','CASTROLIND':'320001','CEATLTD':'3905025','CENTURYTEX':'160001','CESC':'160769','CGPOWER':'194561','CHENNPETRO':'524545','CHOLAFIN':'175361','CIPLA':'177665','COALINDIA':'5215745','COLPAL':'3876097','CONCOR':'1215745','CUMMINSIND':'486657','DABUR':'197633','DALMIABHA':'5444865','DCBBANK':'3513601','DHFL':'215553','DISHTV':'3721473','DIVISLAB':'2800641','DLF':'3771393','DRREDDY':'225537','EICHERMOT':'232961','ENGINERSIN':'1256193','EQUITAS':'4314113','ESCORTS':'245249','EXIDEIND':'173057','FEDERALBNK':'261889','GAIL':'1207553','GLENMARK':'1895937','GMRINFRA':'3463169','GODFRYPHLP':'302337','GODREJCP':'2585345','GODREJIND':'2796801','GRANULES':'3039233','GRASIM':'315393','GSFC':'319233','HAVELLS':'2513665','HCC':'352001','HCLTECH':'1850625','HDFC':'340481','HDFCBANK':'341249','HEROMOTOCO':'345089','HEXAWARE':'2747905','HINDALCO':'348929','HINDPETRO':'359937','HINDUNILVR':'356865','HINDZINC':'364545','IBULHSGFIN':'7712001','ICICIBANK':'1270529','ICICIPRULI':'4774913','IDBI':'377857','IDEA':'3677697','IDFC':'3060993','IDFCBANK':'2863105','IFCI':'381697','IGL':'2883073','INDIACEM':'387841','INDIANB':'3663105','INDIGO':'2865921','INDUSINDBK':'1346049','INFIBEAM':'4159745','INFRATEL':'7458561','INFY':'408065','IOC':'415745','IRB':'3920129','ITC':'424961','JETAIRWAYS':'2997505','JINDALSTEL':'1723649','JISLJALEQS':'2661633','JPASSOCIAT':'2933761','JSWSTEEL':'3001089','JUBLFOOD':'4632577','JUSTDIAL':'7670273','KAJARIACER':'462849','KOTAKBANK':'492033','KPIT':'1790465','KSCL':'3832833','KTKBANK':'2061825','L&TFH':'6386689','LICHSGFIN':'511233','LT':'2939649','LUPIN':'2672641','M&M':'519937','M&MFIN':'3400961','MANAPPURAM':'4879617','MARICO':'1041153','MARUTI':'2815745','MCDOWELL-N':'2674433','MCX':'7982337','MFSL':'548353','MGL':'4488705','MINDTREE':'3675137','MOTHERSUMI':'1076225','MRF':'582913','MRPL':'584449','MUTHOOTFIN':'6054401','NATIONALUM':'1629185','NBCC':'8042241','NCC':'593665','NESTLEIND':'4598529','NHPC':'4454401','NIITTECH':'2955009','NMDC':'3924993','NTPC':'2977281','OFSS':'2748929','OIL':'4464129','ONGC':'633601','ORIENTBANK':'636673','PAGEIND':'3689729','PCJEWELLER':'7455745','PEL':'617473','PETRONET':'2905857','PFC':'3660545','PIDILITIND':'681985','PNB':'2730497','POWERGRID':'3834113','PTC':'2906881','PVR':'3365633','RAMCOCEM':'523009','RAYMOND':'731905','RBLBANK':'4708097','RCOM':'3375873','RECLTD':'3930881','RELCAPITAL':'737793','RELIANCE':'738561','RELINFRA':'141569','REPCOHOME':'7577089','RPOWER':'3906305','SAIL':'758529','SBIN':'779521','SHREECEM':'794369','SIEMENS':'806401','SOUTHBANK':'1522689','SREINFRA':'836353','SRF':'837889','SRTRANSFIN':'1102337','STAR':'1887745','SUNPHARMA':'857857','SUNTV':'3431425','SUZLON':'3076609','SYNDIBANK':'1837825','TATACHEM':'871681','TATACOMM':'952577','TATAELXSI':'873217','TATAGLOBAL':'878593','TATAMOTORS':'884737','TATAMTRDVR':'4343041','TATAPOWER':'877057','TATASTEEL':'895745','TCS':'2953217','TECHM':'3465729','TITAN':'897537','TORNTPHARM':'900609','TORNTPOWER':'3529217','TV18BRDCST':'3637249','TVSMOTOR':'2170625','UBL':'4278529','UJJIVAN':'4369665','ULTRACEMCO':'2952193','UNIONBANK':'2752769','UPL':'2889473','VEDL':'784129','VGUARD':'3932673','VOLTAS':'951809','WIPRO':'969473','WOCKPHARMA':'1921537','YESBANK':'3050241','ZEEL':'975873'}
 #dict_codes = {'APOLLOHOSP':'130270468'}
 #Enter start date, end date and time frame
-records_start_date = "2018-04-16"
-records_end_date = "2018-08-20"
+records_start_date = "2018-04-15"
+records_end_date = "2018-08-17"
 time_frame = "day"
 
 #Create Blank Lists for Uptrend, Downtrend, Range, Uptrend Settled and Downtrend Settled stocks
@@ -149,7 +150,7 @@ for codekey,codeval in dict_codes.items():
                 print("Third timeout occured for ", codekey)
                 timed_out.append(codekey)
                 continue
-    print("Processing ", codekey)
+    #print("Processing ", codekey)
 
     #check if the no. of candlesticks we are checking for calculating the average height are greater than the number of records available
     if(no_candles_for_check > len(records)):
@@ -192,12 +193,29 @@ for codekey,codeval in dict_codes.items():
     checkpoint = 0
     if(allmadiffpositive and maval_diff_list[-1] > mavaluepos):
         strong_uptrend_stocks.append(codekey)
+        if(records[-1]["close"] < ma_check[-1]):
+            print("Stock: ",codekey)
+            print("Strong Uptrend")
+            print("Candlestick closed below the 7MA")
     elif(allmadiffpositive and maval_diff_list[-1] < mavaluepos):
         uptrend_stocks.append(codekey)
+        if(records[-1]["close"] < ma_check[-1]):
+            print("Stock: ",codekey)
+            print("Uptrend")
+            print("Candlestick closed below the 7MA")
+
     if(allmadiffnegative and maval_diff_list[-1] < mavalueneg):
         strong_downtrend_stocks.append(codekey)
+        if(records[-1]["close"] > ma_check[-1]):
+            print("Stock: ",codekey)
+            print("Strong Downtrend")
+            print("Candlestick closed above the 7MA")
     elif(allmadiffnegative and maval_diff_list[-1] > mavalueneg):
         downtrend_stocks.append(codekey)
+        if(records[-1]["close"] > ma_check[-1]):
+            print("Stock: ",codekey)
+            print("Downtrend")
+            print("Candlestick closed above the 7MA")
     else:
         for maval_diff in maval_diff_list:
             if(maval_diff > mavaluepos):
